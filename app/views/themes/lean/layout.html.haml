@@ -1,0 +1,82 @@
+!!!
+%html
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{"http-equiv": "X-UA-Compatible", content:"IE=edge,chrome=1"}
+    %meta{name:'HandheldFriendly', content:'True'}
+    %meta{name:'MobileOptimized', content:'320'}
+    %meta{name:'viewport',content:'user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width'}
+    %meta{name:'apple-mobile-web-app-capable',content:'yes'}
+
+    %title
+      - if current_tag
+        = "Posts tagged #{current_tag.name} - #{site.name}"
+      - elsif content
+        = "#{content.meta_title} - #{site.name}"
+      - elsif @year
+        = "#{@year} - #{site.name}"
+      - else
+        = site.name
+
+    = stylesheet_link_tag "lean", media: "all"
+
+    = yield :html_head
+    = bold_meta
+
+  %body{lang: 'en', id: yield(:body_id)}
+    = bold_header
+
+    %header
+      .third
+        %h1
+          %a{href: '/'}= site.name
+
+      .two-thirds
+        %nav
+          %ol
+            - site.navigation.each_topic do |topic|
+              %li
+                %a{ href: topic.url }= topic.name
+
+      - if site.search_enabled?
+        .full
+          = search_form_tag do
+            = text_field_tag :q, '', placeholder: t('.search_placeholder')
+
+
+    .main
+      = yield
+
+    %footer
+      .third
+        %h1 Everything
+        %ul
+          - site.archive.years.each do |year, count|
+            - if count >  0
+              %li
+                = link_to year, archive_path(year: year)
+                %span.meta (#{count})
+
+      .third
+        %h1 Topics
+        %p.tag-cloud
+          - site.tag_cloud.grouped_tags.shuffle.each do |tag, group|
+            %span{class: "tag tag-#{group}"}= tag.link_to
+
+      - if site.theme_value? :footer_links
+        .third
+          %h1 Elsewhere
+          = raw site.theme_value :footer_links
+
+      %section.bottom.full
+        %p.left
+          - if respond_to?(:atom_feed_url)
+            = link_to 'Atom Feed', atom_feed_url
+        %p.right
+          = bold_logo text: 'Published with', logo: 'bold/logo_tiny_black.png'
+
+
+    = bold_footer
+    / = javascript_include_tag 'jk'
+
+

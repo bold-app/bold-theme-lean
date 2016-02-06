@@ -1,0 +1,55 @@
+/* =========== */
+/* All screens */
+/* =========== */
+
+@include unsemantic-grid-placeholders;
+
+body > header,
+body > .main,
+body > footer {
+  @extend %grid-container;
+}
+
+.half,
+.third,
+.two-thirds,
+.full {
+  @extend %grid-columns-all;
+}
+
+/* ===================== */
+/* "Mobile" screen width */
+/* ===================== */
+
+@media screen and (max-width: $media-mobile-max) {
+  @include unsemantic-grid-placeholders(mobile);
+
+  .half,
+  .third,
+  .two-thirds,
+  .full {
+    @extend %mobile-grid-100;
+  }
+}
+
+/* ====================== */
+/* "Desktop" screen width */
+/* ====================== */
+@media screen and (min-width: $media-desktop-min) {
+  @include unsemantic-grid-placeholders(desktop);
+
+  .third {
+    @extend %desktop-grid-33;
+  }
+  .half {
+    @extend %desktop-grid-50;
+  }
+  .two-thirds {
+    @extend %desktop-grid-66;
+  }
+  .full {
+    @extend %desktop-grid-100;
+  }
+
+}
+

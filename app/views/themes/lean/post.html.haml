@@ -1,0 +1,51 @@
+- content_for :html_head do
+  = tw_meta 'summary'
+
+%article
+  %header
+    %h1= post.title
+    = render 'themes/lean/post_meta', post: post
+
+  = post.body_html
+
+  - if post.commentable?
+    %section.comments
+      %h1#comments= t '.comments'
+
+      - if content.comments.any?
+        - for comment in content.comments
+          %article{itemscope: true, itemtype: 'http://schema.org/Comment'}
+            %meta{itemprop: 'about', content: post.canonical_url}
+            %aside
+              = comment.author_image size: 64
+
+            %header
+              %h1{itemprop: 'author'}= comment.author
+              =time_tag comment.date, format: :datetime_long
+            .body{itemprop: 'text'}
+              = comment.body_html
+      - else
+        %p= t'.no_comments'
+
+
+      = comment_form do |f|
+        - if flash[:notice]
+          .full
+            %p= flash[:notice]
+
+        = f.input :body, as: :text, label: t('.leave_reply'), input_html: {rows: 5}, required: false, hint: raw(t('.comment_body_hint_html'))
+
+        .half
+          = f.input :author_name, label: t('.plh.name')
+        .half
+          = f.input :author_email, label: t('.plh.email')
+
+        .half
+          = f.input :author_website, label: t('.plh.website')
+
+        .full
+          .buttons
+            = f.button :submit, t('.comment_button')
+
+        %p.small= raw t '.disclaimer'
+

@@ -1,0 +1,9 @@
+- content_for(:body_id){"archives"}
+
+%article
+  %header
+    %h1 archive - #{site.archive.year}
+
+  %ul
+    = render partial: 'themes/lean/post', collection: site.archive.posts
+

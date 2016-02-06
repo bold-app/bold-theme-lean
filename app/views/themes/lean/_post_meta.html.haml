@@ -1,0 +1,9 @@
+%p.meta
+  =time_tag post.post_date, format: :date_long
+  - if post.tags?
+    &nbsp;|&nbsp;
+    = post.tag_links
+  - if post.comments?
+    &nbsp;|&nbsp;
+    = post.link_to(t('.comment_count', count: post.comments.count), anchor: 'comments')
+

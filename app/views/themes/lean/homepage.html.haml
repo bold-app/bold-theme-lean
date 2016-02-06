@@ -1,0 +1,13 @@
+- content_for(:body_id){"home"}
+
+%article
+  %header
+    %h1= content.title
+
+  = content.body_html
+
+  %section.recent-posts
+    %ul
+      = render partial: 'themes/lean/post', collection: site.posts(limit: 10)
+
+

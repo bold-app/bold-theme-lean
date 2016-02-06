@@ -1,0 +1,16 @@
+language: ruby
+
+rvm:
+  - 2.3.0
+
+addons:
+  postgresql: "9.4"
+
+env:
+  - APP_VERSION=master
+
+install:
+  - psql -c 'create database travis_ci_test;' -U postgres
+
+script:
+  - ./run_tests.sh

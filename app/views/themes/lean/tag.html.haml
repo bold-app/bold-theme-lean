@@ -1,0 +1,8 @@
+- content_for(:body_id){"tag"}
+
+%article
+  %header
+    %h1 posts on #{current_tag.name}
+  %ul
+    = render partial: 'themes/lean/post', collection: current_tag.posts
+

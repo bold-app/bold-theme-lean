@@ -1,0 +1,40 @@
+article {
+  .footnotes {
+    border-top: 1px solid #aaa;
+    margin-top: 20px;
+    padding: 20px;
+
+  /*
+    ol {
+      font-size: 13px;
+      list-style-type: numbered;
+    }
+  */
+  }
+  /*
+  sup {
+    vertical-align: super;
+    font-size: 13px;
+  }
+  */
+}
+
+#footnotediv {
+  position: absolute;
+  max-width: 400px;
+  overflow: visible;
+  background-color: white;
+  padding: 10px 10px 0 10px;
+  border:1px solid #CDBBB5;
+  box-shadow: #555 0 0 10px;
+  -webkit-box-shadow: #555 0 0 10px;
+  -moz-box-shadow: 0 0 10px #555;
+
+  * {
+    margin-bottom: 10px;
+  }
+
+}
+
+
+

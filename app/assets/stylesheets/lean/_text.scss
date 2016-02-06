@@ -1,0 +1,154 @@
+// 960 Grid System ~ Text CSS.
+// Learn more ~ http://960.gs/
+//
+// Licensed under GPL and MIT.
+
+// `Basic HTML
+//----------------------------------------------------------------------------------------------------
+
+body {
+  font: 18px / 1.75 $fontFamilySerif;
+  color: $baseTextColor;
+}
+
+pre,
+code {
+  font-family: $fontFamilyMono;
+}
+
+hr {
+  border: 0 #ccc solid;
+  border-top-width: 1px;
+  clear: both;
+  height: 0;
+}
+
+small, p.small {
+  font-size: 12px;
+}
+p.small {
+  line-height: 1.25;
+}
+
+// `Headings
+//----------------------------------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $fontFamilySansSerif;
+}
+
+h1 {
+  font-size: 2em;
+  a {
+    color: $baseTextColor;
+    text-decoration: none;
+  }
+  a:visited {
+    color: $baseTextColor;
+  }
+}
+
+header h1, section h1 {
+  font-size: 1.25em;
+}
+article {
+
+  h1 {
+    font-size: 2em;
+    font-weight: 500;
+    margin: 30px 0;
+  }
+
+  header h1 {
+    line-height: 1.25em;
+    margin: 10px 0 5px 0;
+  }
+
+  h2 {
+    font-size: 1.75em;
+    font-weight: 500;
+    margin: 30px 0;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin: 20px 0;
+  }
+
+  h4 {
+    font-size: 1.25em;
+    font-weight: 500;
+    margin: 15px 0;
+  }
+
+  h5 {
+    font-size: 1em;
+    font-weight: 500;
+    margin: 15px 0 5px 0;
+  }
+
+  h6 {
+    font-size: 0.75em;
+    font-weight: 500;
+    margin: 15px 0 5px 0;
+  }
+
+}
+
+abbr {
+  cursor: help;
+}
+
+blockquote {
+  padding: 10px 30px;
+  margin: 0px 0px 20px;
+  border-left: 5px solid #EEE;
+}
+
+kbd, code {
+  padding: 2px 4px;
+  font-size: 90%;
+  font-family: $fontFamilyMono;
+}
+
+kbd {
+  color: #FFF;
+  background-color: #333;
+}
+
+code {
+  color: $codeColor;
+  background-color: lighten($codeColor, 50%);
+}
+
+pre {
+  padding: 0.75em 1em;
+  font-size: 0.75em;
+  line-height: 1.25em;
+  background-color: #F5F5F5;
+}
+pre code {
+  color: $baseTextColor;
+  padding: 0;
+  background-color: #F5F5F5;
+}
+
+figure {
+  figcaption {
+    font-size: 75%;
+    text-align: center;
+  }
+}
+
+dl {
+  dt, dd {
+    margin: 0;
+    padding: 0;
+  }
+  dt {
+    margin-top: 5px;
+    font-weight: bold;
+  }
+}
+

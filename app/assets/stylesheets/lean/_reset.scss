@@ -1,0 +1,45 @@
+// Default value.
+$lang-forward: left !default;
+
+html,
+body {
+  height: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  // Override the default (display: inline) for
+  // browsers that do not recognize HTML5 tags.
+  //
+  // IE8 (and lower) requires a shiv:
+  // http://ejohn.org/blog/html5-shiv
+  display: block;
+}
+
+b,
+strong {
+  // Makes browsers agree.
+  // IE + Opera = font-weight: bold.
+  // Gecko + WebKit = font-weight: bolder.
+  font-weight: bold;
+}
+
+img {
+  color: transparent;
+  font-size: 0;
+  vertical-align: middle;
+  // For IE.
+  // http://css-tricks.com/ie-fix-bicubic-scaling-for-images
+  -ms-interpolation-mode: bicubic;
+}
+

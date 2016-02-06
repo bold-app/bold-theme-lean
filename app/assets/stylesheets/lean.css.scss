@@ -1,0 +1,24 @@
+$unsemantic-ie7-support: false;
+$media-mobile-max: 747px;
+$media-desktop-min: 748px;
+$container-max-width: 748px;
+$gutter-half: 0px;
+
+$fontFamilySerif: "Droid Serif", "Georgia", serif;
+$fontFamilySansSerif: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+$fontFamilyMono: Menlo, Monaco, Consolas, monospace;
+
+$baseTextColor: #333;
+$linkColor: #2334ff;
+$codeColor: #C7254E;
+
+@import "lean/reset";
+@import "lean/text";
+@import "lean/unsemantic-vars";
+@import "lean/unsemantic-ie-snap";
+
+@import "lean/tools";
+@import "lean/layout";
+@import "lean/lean";
+@import "lean/coderay_twilight";
+
