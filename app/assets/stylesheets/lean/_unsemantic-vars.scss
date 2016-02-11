@@ -104,8 +104,8 @@ $lang-reverse: right !default;
     //     support "box-sizing: border-box".
 
     /* <IE7> */
-    *padding-left: 0;
-    *padding-right: 0;
+    *padding-left: 0px;
+    *padding-right: 0px;
     /* </IE7> */
 
     //
@@ -143,8 +143,8 @@ $lang-reverse: right !default;
     display: block;
     overflow: hidden;
     visibility: hidden;
-    width: 0;
-    height: 0;
+    width: 0px;
+    height: 0px;
   }
 
   // http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified
@@ -155,10 +155,10 @@ $lang-reverse: right !default;
     display: block;
     overflow: hidden;
     visibility: hidden;
-    font-size: 0;
-    line-height: 0;
-    width: 0;
-    height: 0;
+    font-size: 0px;
+    line-height: 0px;
+    width: 0px;
+    height: 0px;
   }
 
   %#{$scope}clearfix:after {
@@ -187,7 +187,7 @@ $lang-reverse: right !default;
     }
 
     // Set if gutter is non-zero.
-    @if $container-gutter != 0 {
+    @if $container-gutter != 0px {
       padding-left: $container-gutter;
       padding-right: $container-gutter;
     }
@@ -205,7 +205,7 @@ $lang-reverse: right !default;
     box-sizing: border-box;
 
     // Set if gutter is non-zero.
-    @if $gutter-half != 0 {
+    @if $gutter-half != 0px {
       padding-left: $gutter-half;
       padding-right: $gutter-half;
       @include ie7-margin($gutter-half);
@@ -215,8 +215,8 @@ $lang-reverse: right !default;
   // Remove padding, if it's being used
   // as a parent for other grid columns.
   %#{$scope}grid-parent {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   // Offset the left/right margin of an
@@ -224,7 +224,7 @@ $lang-reverse: right !default;
   %#{$scope}grid-offset {
     @extend %#{$scope}clearfix;
 
-    @if $gutter-half != 0 {
+    @if $gutter-half != 0px {
       margin-left: -1 * $gutter-half;
       margin-right: -1 * $gutter-half;
     }
