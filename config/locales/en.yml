@@ -15,6 +15,10 @@ en:
         contact:
           receiver: Target Address
 
+      flash:
+        contact_messages:
+          created: "Thank you for your message. I'll get back to you as soon as possible."
+
       post:
         comments: Comments
         comment_body_hint_html: "You can use <a href='http://daringfireball.net/projects/markdown' target='_blank'>Markdown</a> here."

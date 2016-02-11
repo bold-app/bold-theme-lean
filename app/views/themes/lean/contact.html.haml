@@ -1,13 +1,13 @@
 %article
-  .full
-    %header
-      %h1= page.title
+  %header
+    %h1= page.title
 
-    = page.body_html
+  = page.body_html
 
   %section.contact
 
     = contact_form do |f|
+      = flash_message
       .half
         = f.input :sender_name, required: false, label: t('.name')
       .half
