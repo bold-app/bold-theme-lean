@@ -1,3 +1,6 @@
+- content_for(:html_head) do
+  = site.posts.meta_pagination
+
 - content_for(:body_id){"home"}
 
 %article

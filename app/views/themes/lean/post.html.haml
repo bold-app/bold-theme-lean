@@ -6,7 +6,7 @@
     %h1= post['title_is_markdown'] == '1' ? post.title_html : post.title
     = render 'themes/lean/post_meta', post: post
 
-  = post.body_html
+  ~ post.body_html
 
   %footer
 

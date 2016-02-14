@@ -68,6 +68,14 @@ ul.post-list {
   margin: 0 0 10px 0;
   font-style: italic;
   font-size: 14px;
+  a {
+    text-decoration: none;
+    color: $baseTextColor;
+  }
+  a:hover {
+    text-decoration: none;
+    color: $baseTextColor;
+  }
 }
 
 /*
