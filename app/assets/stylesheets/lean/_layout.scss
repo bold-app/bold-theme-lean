@@ -32,9 +32,11 @@ body main > article {
     margin-left: 20px;
     margin-right: 20px;
   }
+
   body > header, article h1 {
     text-align: center;
   }
+
   body > footer li {
     display: inline;
     margin-right: 20px;
@@ -50,7 +52,7 @@ body main > article {
   img {
     max-width: 100% !important;
   }
-  
+
 }
 
 /* ====================== */
@@ -58,6 +60,10 @@ body main > article {
 /* ====================== */
 @media screen and (min-width: $media-desktop-min) {
   @include unsemantic-grid-placeholders(desktop);
+
+  body > header nav ol {
+    float: right;
+  }
 
   .third {
     @extend %desktop-grid-33;
