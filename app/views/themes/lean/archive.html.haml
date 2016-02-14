@@ -4,6 +4,8 @@
   %header
     %h1 archive - #{site.archive.year}
 
-  %ul
+  %ul.post-list
     = render partial: 'themes/lean/post', collection: site.archive.posts
+
+
 

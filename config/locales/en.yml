@@ -21,16 +21,28 @@ en:
         contact_messages:
           created: "Thank you for your message. I'll get back to you as soon as possible."
 
+      layout:
+        atom_feed: Subscribe
+        published_with: Published with
+
+      pagination:
+        next_page:
+          label: older
+        prev_page:
+          label: newer
+
       post:
         comments: Comments
         comment_body_hint_html: "You can use <a href='http://daringfireball.net/projects/markdown' target='_blank'>Markdown</a> here."
         no_comments: No comments yet.
         leave_reply: "Leave a reply:"
         comment_button: Post comment
+        next: Next
         plh:
           name: Your name
           email: Your email (no spam, promised)
           website: Your website (optional)
+        prev: Previous
         disclaimer: "For the sake of spam checking any data you submit, including your IP address, will be transferred to the US based Akismet web service (akismet.com). If that's not acceptable for you, you can also reach me <a href=\"/contact\">by other means</a>."
 
       post_meta:

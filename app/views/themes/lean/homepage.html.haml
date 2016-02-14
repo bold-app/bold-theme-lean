@@ -6,8 +6,8 @@
 
   = content.body_html
 
-  %section.recent-posts
-    %ul
+  %section
+    %ul.post-list
       = render partial: 'themes/lean/post', collection: site.posts(limit: page['article_limit'] || 10)
 
-
+    = site.posts.pagination

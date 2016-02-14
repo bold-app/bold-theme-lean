@@ -44,11 +44,10 @@
             = text_field_tag :q, '', placeholder: t('.search_placeholder')
 
 
-    .main
+    %main
       = yield
 
     %footer
-
       - if site.theme_value? :footer_links
         .third
           %h1 Elsewhere
@@ -72,12 +71,9 @@
       %section.bottom.full
         %p.left
           - if respond_to?(:atom_feed_url)
-            = link_to 'Atom Feed', atom_feed_url
+            = link_to t('.atom_feed'), atom_feed_url
         %p.right
-          = bold_logo text: 'Published with', logo: 'bold/logo_tiny_black.png'
-
+          = bold_logo text: t('.published_with'), logo: 'bold/logo_tiny_black.png'
 
     = bold_footer
-    / = javascript_include_tag 'jk'
-
 

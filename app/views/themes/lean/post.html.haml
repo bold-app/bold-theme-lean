@@ -8,6 +8,19 @@
 
   = post.body_html
 
+  %footer
+
+    %nav.prev-next
+      %ul
+        - if p = post.prev_post
+          %li
+            %span= t '.prev'
+            = p.link_to
+        - if p = post.next_post
+          %li
+            %span= t '.next'
+            = p.link_to
+
   - if post.commentable?
     %section.comments
       %h1#comments= t '.comments'
@@ -24,8 +37,6 @@
               =time_tag comment.date, format: :datetime_long
             .body{itemprop: 'text'}
               = comment.body_html
-      - else
-        %p= t'.no_comments'
 
 
       = comment_form do |f|

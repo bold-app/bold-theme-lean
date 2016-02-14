@@ -5,12 +5,12 @@
 @include unsemantic-grid-placeholders;
 
 body > header,
-body > .main,
+body > main,
 body > footer {
   @extend %grid-container;
 }
 
-body .main > article {
+body main > article {
   max-width: 600px;
   margin: 0 auto;
 }
