@@ -29,15 +29,15 @@ module Bold
 
             name 'The Lean Theme'
 
-            template :homepage
-            template :post
-            template :page
+            template :homepage, fields: %w(article_limit)
+            template :post, fields: %w(title_is_markdown)
+            template :page, fields: %w(title_is_markdown)
             template :search
             template :tag,    body: false
             template :archive, body: false
             template :contact, fields: %w(contact_message_receiver)
 
-            image_version :big, width: 1336, quality: 70
+            image_version :big, width: 1496, quality: 70
             image_version :small, width: 600, quality: 70
 
             assets %w( lean.css )

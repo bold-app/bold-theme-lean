@@ -1,5 +1,5 @@
 %li
-  = post.link_to
+  = post.link_to( post['title_is_markdown'] == '1' ? post.title_html : post.title )
   = render 'themes/lean/post_meta', post: post
 
 

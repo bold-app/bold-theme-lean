@@ -1,7 +1,7 @@
 %article
   %header
-    %h1= content.title_html
+    %h1= page['title_is_markdown'] == '1' ? page.title_html : page.title
 
-  = content.body_html
+  = page.body_html
 
 

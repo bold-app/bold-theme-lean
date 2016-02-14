@@ -1,3 +1,6 @@
+/*
+ * main header
+ */
 body > header {
   h1 {
     margin-top: 0;
@@ -7,8 +10,8 @@ body > header {
       padding: 0;
       margin: 5px 0;
       li {
-        float: left;
-        padding-left: 4px;
+        display: inline;
+        padding: 0;
         margin: 0;
         list-style-type: none;
         a {
@@ -30,30 +33,12 @@ body > header {
   }
 }
 
+/*
+ * content
+ */
 article {
   header {
     padding: 20px 0;
-  }
-
-
-  img {
-    max-width: 100%;
-  }
-
-  img.small {
-    max-width: 300px;
-    margin: 0 20px 20px 0;
-  }
-
-  img.big {
-    max-width: 668px;
-  }
-
-  figure.image {
-    text-align: center;
-    img {
-      margin: 0 auto;
-    }
   }
 }
 
@@ -66,13 +51,99 @@ section, .clear {
   font-style: italic;
   font-size: .75em;
 }
+
+/*
+ * floated elements (small images)
+ */
 .left {
   float: left;
+  margin-right: 20px;
 }
 .right {
   float: right;
+  margin-left: 20px;
 }
 
+/*
+ * Footnotes
+ */
+footer.footnotes {
+  border-top: 1px solid #eee;
+  font-size: 75%;
+  line-height: 1.25em;
+}
+
+.footnotes a, sup a {
+  text-decoration: none;
+}
+
+
+/*
+ * Figures / Images
+ */
+
+img {
+  max-width: 748px;
+}
+
+img.small {
+  max-width: 280px;
+  margin: 20px 0;
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+figure.image {
+  margin-top: 30px;
+  text-align: center;
+  /* Keep images centered, and allow images wider than the main
+     text column to break out. */
+  img.big {
+    margin: 0 auto;
+    display: block;
+    height: auto;
+    padding: 0.6em 0;
+    /* Centers an image by (1) pushing its left edge to the
+       center of its container and (2) shifting the entire image
+       in the opposite direction by half its own width.
+       Works for images that are larger than their containers. */
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%); /* for Safari and iOS */
+    -ms-transform: translateX(-50%); /* for IE9 */
+    transform: translateX(-50%);
+  }
+}
+
+figure.code {
+  figcaption {
+    text-align: center;
+    font-size: 13px;
+    line-height: 2em;
+    text-shadow: 0px 1px 0px #CBCCCC;
+    color: #474747;
+    font-weight: normal;
+    margin-bottom: 0px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    @include gradient(#eeeeee, #a0a0a0);
+    border-width: 1px 1px 0px;
+    border-style: solid solid none;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-color: #CBCBCB #A5A5A5 -moz-use-text-color;
+  }
+}
+
+/*
+ * Comments
+ */
 section.comments {
   margin-top: 60px;
   border-top: 1px solid #eee;
@@ -105,6 +176,9 @@ section.comments {
   }
 }
 
+/*
+ * Forms
+ */
 form.simple_form {
   margin-top: 20px;
   * {
@@ -148,65 +222,9 @@ form.simple_form {
   }
 }
 
-body > footer {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #eee;
-  h1 {
-    font-size: 1em;
-    margin: 20px 0 10px 0;
-  }
-  ul, li {
-    list-style-type: none;
-    padding-left: 0;
-    margin-left: 0;
-  }
-  section.bottom {
-    font-size: 12px;
-    img.bold-logo {
-      width: 39px;
-      height: 10px;
-      margin-left: 5px;
-    }
-  }
-  .third {
-    padding-right: 20px;
-  }
-}
-
-footer.footnotes {
-  border-top: 1px solid #eee;
-  font-size: 75%;
-  line-height: 1.25em;
-}
-
-.footnotes a, sup a {
-  text-decoration: none;
-}
-
-figure.code {
-  figcaption {
-    text-align: center;
-    font-size: 13px;
-    line-height: 2em;
-    text-shadow: 0px 1px 0px #CBCCCC;
-    color: #474747;
-    font-weight: normal;
-    margin-bottom: 0px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    @include gradient(#eeeeee, #a0a0a0);
-    border-width: 1px 1px 0px;
-    border-style: solid solid none;
-    -moz-border-top-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    border-image: none;
-    border-color: #CBCBCB #A5A5A5 -moz-use-text-color;
-  }
-}
-
+/*
+ * Alerts
+ */
 .flash {
   padding: 15px;
   margin-bottom: 20px;
@@ -233,3 +251,33 @@ figure.code {
   background-color: #F2DEDE;
   border-color: #EBCCD1;
 }
+
+/*
+ * main footer
+ */
+body > footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  h1 {
+    font-size: 1em;
+    margin: 20px 0 10px 0;
+  }
+  ul, li {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  section.bottom {
+    font-size: 12px;
+    img.bold-logo {
+      width: 39px;
+      height: 10px;
+      margin-left: 5px;
+    }
+  }
+  .third {
+    padding-right: 20px;
+  }
+}
+

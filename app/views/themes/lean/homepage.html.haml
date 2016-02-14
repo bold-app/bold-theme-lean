@@ -8,6 +8,6 @@
 
   %section.recent-posts
     %ul
-      = render partial: 'themes/lean/post', collection: site.posts(limit: 10)
+      = render partial: 'themes/lean/post', collection: site.posts(limit: page['article_limit'] || 10)
 
 

@@ -10,6 +10,11 @@ body > footer {
   @extend %grid-container;
 }
 
+body .main > article {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .half,
 .third,
 .two-thirds,
@@ -23,6 +28,17 @@ body > footer {
 
 @media screen and (max-width: $media-mobile-max) {
   @include unsemantic-grid-placeholders(mobile);
+  body {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  body > header, article h1 {
+    text-align: center;
+  }
+  body > footer li {
+    display: inline;
+    margin-right: 20px;
+  }
 
   .half,
   .third,
@@ -30,6 +46,11 @@ body > footer {
   .full {
     @extend %mobile-grid-100;
   }
+
+  img {
+    max-width: 100% !important;
+  }
+  
 }
 
 /* ====================== */

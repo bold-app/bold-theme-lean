@@ -48,6 +48,12 @@
       = yield
 
     %footer
+
+      - if site.theme_value? :footer_links
+        .third
+          %h1 Elsewhere
+          = raw site.theme_value :footer_links
+
       .third
         %h1 Everything
         %ul
@@ -62,11 +68,6 @@
         %p.tag-cloud
           - site.tag_cloud.grouped_tags.shuffle.each do |tag, group|
             %span{class: "tag tag-#{group}"}= tag.link_to
-
-      - if site.theme_value? :footer_links
-        .third
-          %h1 Elsewhere
-          = raw site.theme_value :footer_links
 
       %section.bottom.full
         %p.left

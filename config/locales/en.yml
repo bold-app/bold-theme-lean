@@ -14,6 +14,8 @@ en:
       fields:
         contact:
           receiver: Target Address
+        homepage:
+          article_limit: Number of posts
 
       flash:
         contact_messages:
