@@ -15,7 +15,7 @@
       .full
         = f.input :subject, required: false, label: t('.subject')
       .full
-        = f.input :body, required: false, label: t('.body'), input_html: { rows: 8 }
+        = f.input :body, required: false, label: t('.body'), input_html: { rows: 8 }, as: :text
       .full
         .buttons
           = f.button :submit, t('.submit')
