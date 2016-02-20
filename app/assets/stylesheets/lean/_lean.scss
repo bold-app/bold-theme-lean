@@ -117,6 +117,13 @@ img.small {
   margin: 20px 0;
 }
 
+img.left {
+  margin-right: 40px;
+}
+img.right {
+  margin-left: 40px;
+}
+
 figure {
   margin-left: 0;
   margin-right: 0;
@@ -125,6 +132,10 @@ figure {
 figure.image {
   margin-top: 30px;
   text-align: center;
+  img {
+    margin-bottom: 0;
+  }
+
   /* Keep images centered, and allow images wider than the main
      text column to break out. */
   img.big {
