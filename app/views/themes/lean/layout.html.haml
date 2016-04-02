@@ -49,6 +49,8 @@
 
       .third
         %h1 Everything
+        - if site.search_enabled?
+          = link_to t('.search'), site.search_page.path
         %ul
           - site.archive.years.each do |year, count|
             - if count >  0

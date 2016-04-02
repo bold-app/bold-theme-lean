@@ -2,7 +2,6 @@ en:
   themes:
     lean:
 
-
       contact:
         name: Your name
         email: Your email address
@@ -24,7 +23,7 @@ en:
       layout:
         atom_feed: Subscribe
         published_with: Published with
-        search_placeholder: search...
+        search: Search
 
       pagination:
         next_page:
