@@ -10,9 +10,11 @@ body > footer {
   @extend %grid-container;
 }
 
-body main > article {
-  max-width: 600px;
-  margin: 0 auto;
+body {
+  main > article, main > div {
+    max-width: 600px;
+    margin: 0 auto;
+  }
 }
 
 .half,
@@ -33,7 +35,7 @@ body main > article {
     margin-right: 20px;
   }
 
-  body > header, article h1 {
+  body > header, main h1 {
     text-align: center;
   }
 

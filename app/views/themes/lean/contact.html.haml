@@ -1,26 +1,24 @@
-%article
-  %header
-    %h1= page.title
+.contact
+
+  %h1= page.title
 
   = page.body_html
 
-  %section.contact
+  = contact_form do |f|
+    = flash_message
+    .half
+      = f.input :sender_name, required: false, label: t('.name')
+    .half
+      = f.input :sender_email, required: false, label: t('.email')
+    .full
+      = f.input :subject, required: false, label: t('.subject')
+    .full
+      = f.input :body, required: false, label: t('.body'), input_html: { rows: 8 }, as: :text
+    .full
+      .buttons
+        = f.button :submit, t('.submit')
 
-    = contact_form do |f|
-      = flash_message
-      .half
-        = f.input :sender_name, required: false, label: t('.name')
-      .half
-        = f.input :sender_email, required: false, label: t('.email')
-      .full
-        = f.input :subject, required: false, label: t('.subject')
-      .full
-        = f.input :body, required: false, label: t('.body'), input_html: { rows: 8 }, as: :text
-      .full
-        .buttons
-          = f.button :submit, t('.submit')
-
-      %p.small= raw t '.disclaimer'
+    %p.small= raw t '.disclaimer'
 
 
 

@@ -1,0 +1,17 @@
+- content_for(:body_id){"search"}
+
+.search
+  %h1= post['title_is_markdown'] == '1' ? post.title_html : post.title
+
+  = search_form_tag do
+    = text_field_tag :q, current_search.query, id: 'query', placeholder: t('.search_placeholder')
+
+  - if current_search.results?
+    %ul.post-list
+      = render partial: 'themes/lean/post', collection: post_list(limit: 20)
+  - else
+    %p= t'.no_results'
+
+
+
+

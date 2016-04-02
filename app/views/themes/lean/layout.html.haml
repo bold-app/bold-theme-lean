@@ -38,12 +38,6 @@
               %li
                 %a{ href: topic.url }= topic.name
 
-      - if site.search_enabled?
-        .full
-          = search_form_tag do
-            = text_field_tag :q, '', placeholder: t('.search_placeholder')
-
-
     %main
       = yield
 

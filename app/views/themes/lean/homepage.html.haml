@@ -3,14 +3,12 @@
 
 - content_for(:body_id){"home"}
 
-%article
-  %header
-    %h1= content.title
+.homepage
+  %h1= content.title
 
   = content.body_html
 
-  %section
-    %ul.post-list
-      = render partial: 'themes/lean/post', collection: site.posts(limit: page['article_limit'] || 10)
+  %ul.post-list
+    = render partial: 'themes/lean/post', collection: site.posts(limit: page['article_limit'] || 10)
 
-    = site.posts.pagination
+  = site.posts.pagination
