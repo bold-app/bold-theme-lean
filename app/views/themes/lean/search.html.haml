@@ -9,7 +9,7 @@
   - if current_search.results?
     %ul.post-list
       = render partial: 'themes/lean/post', collection: post_list(limit: 20)
-  - else
+  - elsif !current_search.blank?
     %p= t'.no_results'
 
 
