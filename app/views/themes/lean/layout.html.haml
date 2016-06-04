@@ -61,7 +61,7 @@
       .third
         %h1 Topics
         %p.tag-cloud
-          - site.tag_cloud.grouped_tags.shuffle.each do |tag, group|
+          - site.tag_cloud.weighted_tags(groups: 4, limit: site.theme_value(:footer_max_tags)).shuffle.each do |tag, group|
             %span{class: "tag tag-#{group}"}= tag.link_to
 
       %section.bottom.full

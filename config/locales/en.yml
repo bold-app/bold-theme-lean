@@ -55,6 +55,7 @@ en:
         no_results: 'Nothing found.'
       settings:
         footer_links: HTML for footer link section
+        footer_max_tags: Maximum number of tags in footer
 
       time:
         formats:

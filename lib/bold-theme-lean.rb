@@ -44,8 +44,11 @@ module Bold
 
             render_on :view_sitemaps_end, 'archives_sitemap'
 
-            settings partial: 'settings', defaults: { footer_links: '' }
-
+            settings partial: 'settings',
+                     defaults: {
+                       footer_links: '',
+                       footer_max_tags: 20,
+                    }
           end
         end
 
