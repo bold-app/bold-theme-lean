@@ -34,7 +34,7 @@
 
             %header
               %h1{itemprop: 'author'}= comment.author
-              =time_tag comment.date, format: :datetime_long
+              =time_tag comment.date, format: :date_long
             .body{itemprop: 'text'}
               = comment.body_html
 
